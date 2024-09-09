@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { PiPersonSimpleHikeBold } from 'react-icons/pi';
 
 const SuperHerosPage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -17,7 +18,10 @@ const SuperHerosPage = () => {
 
   return (
     <>
-      <h2 className="name old">Super Heros Page</h2>
+      <h2 className="name old">
+        <PiPersonSimpleHikeBold className="svg" />
+        Super Heros Page
+      </h2>
       {data.map((hero) => {
         return (
           <div key={hero.id} className="hero">
