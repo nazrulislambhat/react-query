@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-export const SuperHerosPage = () => {
+const SuperHerosPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
 
@@ -17,15 +17,15 @@ export const SuperHerosPage = () => {
 
   return (
     <>
-      <h2 className="name">Super Heros Page</h2>
+      <h2 className="name old">Super Heros Page</h2>
       {data.map((hero) => {
         return (
-          <div key={hero.id}>
-            <h3>{hero.name}</h3>
-            <p>{hero.power}</p>
+          <div key={hero.id} className="hero">
+            <h3>{hero.name}</h3> - <p>{hero.alterEgo}</p>
           </div>
         );
       })}
     </>
   );
 };
+export default SuperHerosPage;

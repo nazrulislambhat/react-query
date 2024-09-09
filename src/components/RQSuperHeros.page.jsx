@@ -1,7 +1,7 @@
 function RQSuperHerosPage() {
   return (
     <div>
-      <h2 className="name">React Query Super Heros Page</h2>
+      <h2 className="name new">React Query Super Heros Page</h2>
       RQSuperHerosPage
     </div>
   );

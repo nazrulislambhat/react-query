@@ -26,6 +26,22 @@ ul {
   border-radius: 50px;
   text-align: center;
   margin: 1rem 0px;
-  padding: 1rem 0px;
+  padding: 0.5rem 0px;
   color: azure;
+}
+.name.old {
+  background-color: palegreen;
+  color: black;
+}
+.name.new {
+  background-color: aquamarine;
+  color: black;
+}
+.hero {
+  display: flex;
+  gap: 1rem;
+  justify-content: start;
+  align-items: center;
+  border-bottom: 1px dashed black;
+  width: fit-content;
 }
