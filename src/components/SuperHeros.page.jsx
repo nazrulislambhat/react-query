@@ -5,15 +5,24 @@ import { PiPersonSimpleHikeBold } from 'react-icons/pi';
 const SuperHerosPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
-
+  const [error, setError] = useState('');
   useEffect(() => {
-    axios.get('http://localhost:4000/superheros').then((res) => {
-      setData(res.data);
-      setIsLoading(false);
-    });
+    axios
+      .get('http://localhost:4000/superheros')
+      .then((response) => {
+        setData(response.data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setError(error.message);
+        setIsLoading(false);
+      });
   }, []);
   if (isLoading) {
     return <div>Loading...</div>;
+  }
+  if (error) {
+    return <div>Error: {error}</div>;
   }
 
   return (
