@@ -5,7 +5,6 @@ import './App.css';
 import HomePage from './components/Home.page';
 import RQSuperHerosPage from './components/RQSuperHeros.page';
 import SuperHerosPage from './components/SuperHeros.page';
-import React from 'react';
 
 const queryClient = new QueryClient();
 
