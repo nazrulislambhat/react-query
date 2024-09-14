@@ -8,11 +8,15 @@ const fetchSuperHeros = () => {
   });
 };
 function RQSuperHerosPage() {
-  const { isLoading, data, error, isError, isFetching } = useQuery(
+  const { isLoading, data, error, isError, isFetching, refetch } = useQuery(
     'superheros',
     fetchSuperHeros,
     {
-      staleTime: 20000,
+      // refetchOnMount: true,
+      // refetchOnWindowFocus: true,
+      // refetchInterval: false, //stops if window loose focus
+      // refetchIntervalInBackground: true,
+      enabled: true,
     }
   );
   console.log('Loading:', isLoading);
@@ -25,10 +29,12 @@ function RQSuperHerosPage() {
   }
   return (
     <>
+      <button onClick={() => refetch()}>Refetch</button>
       <h2 className="name new">
         <SiReactquery className="svg" />
         React Query Super Heros Page
       </h2>
+
       {data.map((hero) => {
         return (
           <div key={hero.id} className="hero">
