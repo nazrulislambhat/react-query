@@ -34,7 +34,7 @@ const SuperHerosPage = () => {
       {data.map((hero) => {
         return (
           <div key={hero.id} className="hero">
-            <h3>{hero.name}</h3> - <p>{hero.alterEgo}</p>
+            <h3>{hero.name}</h3> === <p>{hero.alterEgo}</p>
           </div>
         );
       })}
